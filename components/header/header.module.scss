@@ -1,7 +1,10 @@
 @import "../../styles/mixins/color.scss";
+@import "../../styles/mixins/padding.scss";
 
 .container{
-    padding: 34px 180px;
+    @include Padding;
+    padding-top: 34px ;
+    padding-bottom: 34px ;
     width: 100% ;
     background-color: $purple-color;
     border-bottom: 0.5px solid $grey-color;
@@ -9,12 +12,14 @@
     grid-template-columns: repeat(3,1fr);
     align-items: center;
     justify-content: space-between;
+    color: $white-color;
 }
 .logotipo{
 
 }
 
 .menu{
+    text-align: center;
     font-size: 22px;
     a{
         color: $white-color;
@@ -24,5 +29,9 @@
     }
 }
 
-.action{}
+
+
+.action{
+    text-align: end;
+}
 
