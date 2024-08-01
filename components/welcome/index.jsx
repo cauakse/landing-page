@@ -3,7 +3,7 @@ import Button from '../button'
 import cardImage from '../../public/images/cardImage.svg'
 import fundo from '../../public/images/fundo.svg'
 import Image from 'next/image'
-export default function () {
+export default function Welcome () {
     return (
         <div className={style.container}>
             <div className={style.text}>
