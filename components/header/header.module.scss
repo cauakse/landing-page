@@ -5,7 +5,8 @@
     width: 100% ;
     background-color: $purple-color;
     border-bottom: 0.5px solid $grey-color;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     align-items: center;
     justify-content: space-between;
 }
@@ -15,6 +16,9 @@
 
 .menu{
     font-size: 22px;
+    a{
+        color: $white-color;
+    }
     a+a{
         padding-left: 38.9px;
     }
@@ -22,10 +26,3 @@
 
 .action{}
 
-.button{
-    padding: 15px 50px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: $green-color;
-}

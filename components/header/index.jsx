@@ -2,11 +2,12 @@ import Link from 'next/link'
 import Logo from '../../public/images/agência.svg'
 import Image from 'next/image'
 import style from './header.module.scss'
+import Button from '../button'
 
 const Header = () => {
     return (<div className={style.container}>
         <div className={style.logotipo}>
-            <Image src={Logo}></Image>
+            <Image src={Logo} alt='logo'></Image>
         </div>
         <div className={style.menu}>
             <Link href="/">Home</Link>
@@ -15,7 +16,7 @@ const Header = () => {
 
         </div>
         <div className={style.action}>
-            <button className={style.button}>Fale conosco</button>
+           <Button tittle={"Fale Conosco"} kind={"primary"}/>
         </div>
     </div>)
 }
