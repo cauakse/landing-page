@@ -1,0 +1,52 @@
+@import '../../styles/mixins/padding.scss';
+@import '../../styles/mixins/color.scss';
+
+.container{
+    @include Padding;
+    padding-top: 72px;
+    background-color: $purple3-color;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+
+.collum{
+    margin-top: 4rem;
+
+    &.collumPrincipal{
+        margin-top: 0px;
+    }
+
+    h1{
+        font-size: 24px;
+        color:$green2-color;
+    }
+    p{
+        font-size: 22px;
+    }
+    .tittle{
+        font-size: 29px;
+        color: $white-color;
+    }
+}
+
+.allrightreserved{
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    opacity: 0.7;
+    color: $grey3-color;
+    padding: 3rem;
+}
+
+.icons{
+    display: inline-grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.finalTittle{
+    text-align: end;
+}
