@@ -5,8 +5,8 @@ import Image from "next/image"
 export default function Features() {
     return (
         <div className={style.container}>
-            <h1>Neste bairro, não há agência melhor. Garantimos.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h1 className={style.firstTittle}>Neste bairro, não há agência melhor. Garantimos.</h1>
+            <p className={style.secondTittle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
             <div className={style.features}>
                 <div className={style.feature}>

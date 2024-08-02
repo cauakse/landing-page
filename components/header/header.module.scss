@@ -1,6 +1,7 @@
 @import "../../styles/mixins/color.scss";
 @import "../../styles/mixins/padding.scss";
 @import "../../styles/mixins/responsive.scss";
+@import "../../styles/mixins/fonts.scss";
 
 .container{
     @include Padding;
@@ -13,6 +14,17 @@
     align-items: center;
     justify-content: space-between;
     color: $white-color;
+    @include Pc{
+        grid-template-columns: repeat(4,1fr);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    @include Tablet{
+        grid-template-columns: repeat(2,1fr);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
     @include Phone{
         grid-template-columns: repeat(2,1fr);
         padding-top: 1rem;
@@ -21,6 +33,17 @@
 
 }
 .logotipo{
+
+    @include Pc{
+        width: 150px;
+        height: 60px;
+    }
+
+    @include Tablet{
+        width: 150px;
+        height: 60px;
+    }
+
     @include Phone{
         width: 100px;
         height: 35px;
@@ -30,13 +53,25 @@
 
 .menu{
     text-align: center;
-    font-size: 22px;
+    
     a{
+        @include SubTittle;
         color: $white-color;
     }
     a+a{
+        @include SubTittle;
         padding-left: 38.9px;
     }
+
+    @include Pc{
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    @include Tablet{
+        display: none;
+    }
+
 
     @include Phone{
         display: none;

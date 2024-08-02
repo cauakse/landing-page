@@ -12,6 +12,14 @@
     background-image: url("../../public/images/fundo.svg");
     background-size: contain;
     background-repeat: no-repeat;
+    @include Pc{
+        margin-top: 5rem;
+    }
+    @include Tablet{
+        display: flex;
+        flex-flow: column;
+        margin-top: 5rem;
+    }
     @include Phone {
        display: flex;
        flex-flow: column;
@@ -21,28 +29,27 @@
 
 .texts{
     span{
-        font-size: 30px;
+        @include SubTittle;
         font-weight: 600;
         color: $green2-color;
-        @include Phone {
-            @include SubTittle;
-        }
+
+            
+
     }
     h1{
         margin-top: 1rem;
-        font-size: 65px;
+        @include SizeTittle;
         font-weight: bold;
         margin-bottom: 3rem;
-        @include Phone {
-            @include SizeTittle;
-        }
+         
+
     }
     p{
-        font-size: 30px;
+        @include SubTittle;
         font-weight: 300;
         opacity: 0.7;
         @include Phone {
-            @include SubTittle;
+            
             margin-bottom: 3rem;
         }
     }
@@ -54,6 +61,13 @@
     width: 586px;
     border: 0.5px solid $grey3-color;
     border-radius: 10px;
+    @include Pc{
+        width: 500px;
+    }
+    @include Tablet{
+        width: 450px;
+        margin: 2rem auto;
+    }
     @include Phone {
         width: 250px;
         margin: 0 auto;
@@ -62,18 +76,23 @@
 
     h1{
         font-weight: bold;
-        font-size: 35px;
+        @include SizeTittle;
         color:$purple2-color;
         padding: 0;
         margin: 0;
         margin-bottom: 23px;
-        @include Phone {
-            @include SizeTittle
-        }
+
     }
     form{
         display: grid;
         gap: 23px;
+        @include Pc{
+            gap: 20px;
+        }
+
+        @include Tablet{
+            gap: 17px;
+        }
         @include Phone {
             gap: 13px;
         }
@@ -89,6 +108,10 @@
         line-height: 2rem;
         opacity: 0.7;
         color:$grey3-color;
+        @include Pc{
+            line-height: 2rem;
+            padding: 0 2rem
+        }
         @include Phone{
             @include SubTittle;
             line-height: normal;

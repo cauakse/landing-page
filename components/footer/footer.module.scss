@@ -7,9 +7,28 @@
 .container{
     @include Padding;
     padding-top: 72px;
+    margin-top: 4rem;
     background-color: $purple3-color;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    @include Pc{
+        padding-top: 2rem;
+        margin-top: 4rem;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: 
+        "item1 item1 item1"
+        "item2 item3 item4"
+        "item5 item5 item5";
+        .collum1{
+            text-align: center;
+        }
+    }
+    @include Tablet{
+        padding-top: 2rem;
+        margin-top: 4rem;
+        display: flex;
+        flex-flow: column;
+    }
     @include Phone {
         display: flex;
         flex-flow: column;
@@ -26,24 +45,20 @@
     }
 
     h1{
-        font-size: 24px;
+        
         color:$green2-color;
-        @include Phone {
+
             @include SubTittle;
-        }
+        
     }
     p{
-        font-size: 22px;
-        @include Phone {
             @include SubTittle;
-        }
+        
     }
     .tittle{
-        font-size: 29px;
         color: $white-color;
-        @include Phone {
-            @include SizeTittle;
-        }
+         @include SizeTittle;
+
     }
 }
 
@@ -54,9 +69,11 @@
     opacity: 0.7;
     color: $grey3-color;
     padding: 3rem;
-    @include Phone{
-        @include SubTittle;
+    @include SubTittle;
+    @include Pc{
+        padding: 1rem;
     }
+
 }
 
 .icons{
@@ -78,8 +95,33 @@
     text-align: end;
 }
 .img{
+    @include Pc{
+        width: 150px;
+        height: 60px;
+    }
+
+    @include Tablet{
+        width: 150px;
+        height: 60px;
+    }
     @include Phone {
         width: 100px;
         height: 35px;
     }
+}
+.collum{
+    padding: 0px;
+}
+
+.collum1{
+    grid-area: item1;
+}
+.collum2{
+    grid-area: item2;
+}
+.collum3{
+    grid-area: item3;
+}
+.collum4{
+    grid-area: item4;
 }

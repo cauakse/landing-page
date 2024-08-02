@@ -5,11 +5,23 @@
     @include Phone{
         font-size: 35px;
     }
+    @include Pc{
+        font-size: 50px;
+    }
+    @include Tablet{
+        font-size: 40px;
+    }
 }
 
 @mixin SubTittle{
     font-size: 30px;
     @include Phone {
         font-size: 15px;
+    }
+    @include Pc{
+        font-size: 20px;
+    }
+    @include Tablet{
+        font-size: 20px;
     }
 }

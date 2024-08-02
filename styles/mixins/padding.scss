@@ -2,6 +2,12 @@
 
 @mixin Padding{
     padding: 0 11.25rem;
+    @include Pc{
+        padding: 0 8rem;
+    }
+    @include Tablet{
+        padding: 0px 4rem;
+    }
     @include Phone{
         padding: 0px 1rem;
     }
