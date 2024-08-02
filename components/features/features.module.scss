@@ -4,7 +4,7 @@
 
 .container{
     @include Padding;
-    width: 100%;
+    padding-bottom: 255px;
     display: flex;
     flex-flow: column;
     align-items: center;

@@ -1,0 +1,12 @@
+@import '../../styles/mixins/color.scss';
+
+.input{
+    padding: 22px 17px;
+    background-color: $grey4-color;
+    border-radius: 10px;
+    border: none;
+    font-size: 19px;
+    font-weight: 300;
+    color: $grey5-color;
+    opacity: 0.7;
+}
