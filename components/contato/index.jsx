@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Button from '../button'
 import Input from '../input'
 import Select from '../select'
@@ -29,8 +30,15 @@ export default function Contato (){
                          
                         <Button tittle={"Enviar"} kind={"full"}/>
                     </form>
-
-                  
+            </div>
+            <div className={style.footer}>
+                    <p>
+                        Ao enviar esse formulário, você reconhece que leu e concorda com a nossa
+                        <Link href={"/"}>
+                            <strong> Política de Privacidade.</strong>
+                        </Link>
+                        
+                    </p>
             </div>
         </div>
     )
