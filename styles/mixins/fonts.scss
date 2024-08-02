@@ -1,0 +1,15 @@
+@import "./responsive.scss";
+
+@mixin SizeTittle{
+    font-size: 71px;
+    @include Phone{
+        font-size: 35px;
+    }
+}
+
+@mixin SubTittle{
+    font-size: 30px;
+    @include Phone {
+        font-size: 15px;
+    }
+}

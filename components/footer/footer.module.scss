@@ -1,5 +1,8 @@
 @import '../../styles/mixins/padding.scss';
 @import '../../styles/mixins/color.scss';
+@import '../../styles/mixins/responsive.scss';
+@import '../../styles/mixins/fonts.scss';
+
 
 .container{
     @include Padding;
@@ -7,6 +10,11 @@
     background-color: $purple3-color;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    @include Phone {
+        display: flex;
+        flex-flow: column;
+        margin-top: 4rem;
+    }
 }
 
 
@@ -20,13 +28,22 @@
     h1{
         font-size: 24px;
         color:$green2-color;
+        @include Phone {
+            @include SubTittle;
+        }
     }
     p{
         font-size: 22px;
+        @include Phone {
+            @include SubTittle;
+        }
     }
     .tittle{
         font-size: 29px;
         color: $white-color;
+        @include Phone {
+            @include SizeTittle;
+        }
     }
 }
 
@@ -37,6 +54,9 @@
     opacity: 0.7;
     color: $grey3-color;
     padding: 3rem;
+    @include Phone{
+        @include SubTittle;
+    }
 }
 
 .icons{
@@ -46,7 +66,20 @@
     align-items: center;
     justify-content: center;
 }
+.icon{
+    margin-top: 0.5rem;
+    @include Phone{
+        width: 25px;
+        height: 25px;
+    }
+}
 
 .finalTittle{
     text-align: end;
+}
+.img{
+    @include Phone {
+        width: 100px;
+        height: 35px;
+    }
 }

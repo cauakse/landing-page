@@ -1,9 +1,11 @@
 @import '../../styles/mixins/color.scss';
+@import '../../styles/mixins/fonts.scss';
+@import '../../styles/mixins/responsive.scss';
 
 .select{
     padding: 22px 17px;
     background-color: $grey4-color;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     font-size: 19px;
     font-weight: 300;
@@ -11,4 +13,10 @@
     opacity: 0.7;
     margin-top: 23px;
     margin-bottom: 23px;
+    @include Phone {
+        padding: 11px 7px;
+        @include SubTittle;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }

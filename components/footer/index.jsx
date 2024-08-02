@@ -11,7 +11,7 @@ export default function Footer () {
     return (
         <div className={style.container}>
             <div className={`${style.collum} ${style.collumPrincipal}`}>
-                <Image src={Logo} alt="Logo"/>
+                <Image src={Logo} alt="Logo" className={style.img}/>
                 <h1 className={style.tittle}>0800 800 800</h1>
                 <p>comercial@agencia.com.br</p>
             </div>
@@ -28,10 +28,10 @@ export default function Footer () {
             <div className={`${style.collum} ${style.finalTittle}`}>
                 <h1>Social</h1>
                 <div className={style.icons}>
-                    <Link href='/'><Image src={instagram}/> </Link>
-                    <Link href='/'><Image src={facebook}/> </Link>
-                    <Link href='/'><Image src={linkedin}/> </Link>
-                    <Link href='/'><Image src={youtube}/> </Link>
+                    <Link href='/'><Image src={instagram} className={style.icon}/> </Link>
+                    <Link href='/'><Image src={facebook} className={style.icon}/> </Link>
+                    <Link href='/'><Image src={linkedin} className={style.icon}/> </Link>
+                    <Link href='/'><Image src={youtube} className={style.icon}/> </Link>
                     </div>
             </div>
 

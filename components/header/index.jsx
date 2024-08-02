@@ -5,10 +5,9 @@ import style from './header.module.scss'
 import Button from '../button'
 
 const Header = () => {
-    return (<div className={style.container}>
-        <div className={style.logotipo}>
-            <Image src={Logo} alt='logo'></Image>
-        </div>
+    return (
+    <div className={style.container}>
+            <Image src={Logo} alt='logo' className={style.logotipo}></Image>
         <div className={style.menu}>
             <Link href="/">Home</Link>
             <Link href="/">O que fazemos</Link>
@@ -16,7 +15,7 @@ const Header = () => {
 
         </div>
         <div className={style.action}>
-           <Button tittle={"Fale Conosco"} kind={"primary"}/>
+           <Button tittle={"Fale Conosco"} kind={"primary"} />
         </div>
     </div>)
 }

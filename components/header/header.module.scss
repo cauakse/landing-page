@@ -1,5 +1,6 @@
 @import "../../styles/mixins/color.scss";
 @import "../../styles/mixins/padding.scss";
+@import "../../styles/mixins/responsive.scss";
 
 .container{
     @include Padding;
@@ -12,10 +13,20 @@
     align-items: center;
     justify-content: space-between;
     color: $white-color;
-}
-.logotipo{
+    @include Phone{
+        grid-template-columns: repeat(2,1fr);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 
 }
+.logotipo{
+    @include Phone{
+        width: 100px;
+        height: 35px;
+    }
+}
+
 
 .menu{
     text-align: center;
@@ -26,11 +37,21 @@
     a+a{
         padding-left: 38.9px;
     }
+
+    @include Phone{
+        display: none;
+    }
 }
 
 
 
 .action{
     text-align: end;
+}
+
+.button{
+    @include Phone {
+         width: 35px !important; 
+    }
 }
 
