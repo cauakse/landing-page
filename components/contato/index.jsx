@@ -3,8 +3,41 @@ import Button from '../button'
 import Input from '../input'
 import Select from '../select'
 import style from './contato.module.scss'
+import { useState } from 'react'
 
 export default function Contato (){
+
+
+    const defaultClient = {
+        name:'',
+        email:'',
+        tel:'',
+        site:'',
+        midia:''
+    }
+
+    const handleChange = (ev)=> {
+        setClient((state)=>{
+            return{
+                ...state,
+                [ev.target.name]: ev.target.value
+            }
+        })
+    }
+    
+    const [client, setClient] = useState(defaultClient);
+
+    const SendEmail = (ev)=>{
+        ev.preventDefault();
+        console.log(client)
+        fetch('/api/sendEmail',{
+            method:"POST",
+            headers:{
+                'Content-Type':"application/json"
+            },
+            body: JSON.stringify(client)
+        }).then(()=>console.log("Tudo certo")).catch(()=>console.log("Algo deu errado..."))
+    }
     return (
         <div className={style.container}>
             <div className={style.texts}>
@@ -14,21 +47,55 @@ export default function Contato (){
             </div>
             <div className={style.form}>
                     <h1>Fale com um especialista</h1>
-                    <form>
-                        <Input type={"text"} text={"Nome completo"}  required={true}/>
-                        <Input type={"email"} text={'E-mail profissional'} required={true}/>
-                        <Input type={"text"} text={'Celular/Whatsapp' } pattern={`/^(?:\\+)[0-9]{2}\\s?(?:\\()[0-9]{2}(?:\\))\\s?[0-9]{4,5}(?:-)[0-9]{4}$/`} required={true}/>
-                        <Input type={"text"} text={'Site'}  required={true}/>
+                    <form onSubmit={SendEmail}>
+                        <Input 
+                        type={"text"} 
+                        text={"Nome completo"} 
+                        id='name' 
+                        name='name'
+                          required={true} 
+                          value={client.name} 
+                          onChange={handleChange}/>
+
+                        <Input 
+                        type={"email"} 
+                        text={'E-mail profissional'}  
+                        id='email' 
+                        name='email'
+                        required={true} 
+                        value={client.email} 
+                        onChange={handleChange}/>
+                        
+                        <Input type={"text"} 
+                        text={'Celular/Whatsapp'}   
+                        id='tel' 
+                        name='tel'
+                        required={true} 
+                        value={client.tel}
+                        onChange={handleChange}/>
+
+                        <Input type={"text"} 
+                        text={'Site'}   
+                        id='site' 
+                        name='site'
+                        required={true} 
+                        value={client.site}
+                        onChange={handleChange}/>
+
                         <Select 
-                        placeholder={"Orçamento para mídia"}
+                        placeholder={"Orçamento para mídia"} 
+                        id='midia' 
+                        name='midia'
                          required={true} 
+                         onChange={handleChange}
                          options={[
                             {text:"Instagram",value:"Instagram"},
                             {text:"Facebook",value:"Facebook"}
-                            ]}/>
+                            ]}
+                            />
 
                          
-                        <Button tittle={"Enviar"} kind={"full"}/>
+                        <Button tittle={"Enviar"} kind={"full"} />
                     </form>
             </div>
             <div className={style.footer}>
